@@ -1,0 +1,25 @@
+{
+  "name": "tal-simple-quote-form",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "nestaxu <nxu@odecee.com.au>"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "angular",
+    "webpack",
+    "es6"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+
+  }
+}

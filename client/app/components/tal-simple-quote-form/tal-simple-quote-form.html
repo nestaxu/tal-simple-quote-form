@@ -1,0 +1,75 @@
+<div class="tal-simple-quote-form">
+
+	<!-- Date of Birth -->
+	<div class="row row-form">
+		<div class="col-xs-12">
+			<tal-input
+				label="Date of Birth"
+				placeholder="DD/MM/YYYY"
+				on-value-changed="talSimpleQuoteFormCtrl.dateOfBirth = changedValue"
+			></tal-input>
+		</div>
+	</div>
+	<!-- TODO: incorporate error handling into tal-input component -->
+	<div class="row row-form row-error" ng-if="talSimpleQuoteFormCtrl.getQuoteClicked && !talSimpleQuoteFormCtrl.dateOfBirth">
+		<div class="col-xs-12 col-lg-offset-3">
+			<span class="error">Date of Birth is required</span>
+		</div>
+	</div>
+
+	<!-- Gender -->
+	<div class="row row-form">
+		<div class="col-xs-12">
+			<tal-dropdown
+				label="Gender"
+				placeholder="Select a gender..."
+				options="talSimpleQuoteFormCtrl.genderOptions"
+				on-option-selected="talSimpleQuoteFormCtrl.gender = selectedOption.id"
+			></tal-dropdown>
+		</div>
+	</div>
+	<!-- TODO: incorporate error handling into tal-dropdown component -->
+	<div class="row row-form row-error" ng-if="talSimpleQuoteFormCtrl.getQuoteClicked && !talSimpleQuoteFormCtrl.gender">
+		<div class="col-xs-12 col-lg-offset-3">
+			<span class="error">Gender is required</span>
+		</div>
+	</div>
+
+	<!-- Annual Income -->
+	<div class="row row-form">
+		<div class="col-xs-12">
+			<tal-input
+				label="Annual Income"
+				placeholder="Enter the annual income"
+				on-value-changed="talSimpleQuoteFormCtrl.annualIncome = changedValue"
+			></tal-input>
+		</div>
+	</div>
+	<!-- TODO: incorporate error handling into tal-input component -->
+	<div class="row row-form row-error" ng-if="talSimpleQuoteFormCtrl.getQuoteClicked && !talSimpleQuoteFormCtrl.annualIncome">
+		<div class="col-xs-12 col-lg-offset-3">
+			<span class="error">Annual Income is required</span>
+		</div>
+	</div>
+
+	<!-- Get Quote -->
+	<div class="row row-form">
+		<div class="col-xs-12">
+			<tal-button
+				class="btn-style-4 btn-get-quote"
+				on-click="talSimpleQuoteFormCtrl.getQuote()"
+			>
+				Get Quote
+			</tal-button>
+		</div>
+	</div>
+
+	<!-- Generated Quote -->
+	<div class="row row-quote" ng-if="talSimpleQuoteFormCtrl.quote">
+		<div class="col-xs-12">
+			<span class="pull-left">Your Quote</span>
+			<span class="pull-right" ng-bind="talSimpleQuoteFormCtrl.quote | currency"></span>
+		</div>
+	</div>
+
+</div>
