@@ -37,7 +37,7 @@ gulp.task('reload', ['webpack'], (done) => {
 
 gulp.task('serve', ['webpack'], () => {
   browserSync({
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3002,
     open: false,
     server: { baseDir: root }
   });
