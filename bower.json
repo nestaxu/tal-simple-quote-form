@@ -20,6 +20,6 @@
     "tests"
   ],
   "dependencies": {
-
+    "tal-interactive-style-guide": "git@github.com:nestaxu/tal-interactive-style-guide.git"
   }
 }
